@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Times New Roman", Georgia, Serif;
+    background-color:rgba(255, 255, 255, 0.4);
+    justify-content: center;
+    display: block;
+    /* align-items: center; */
+    background-image: url(../images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.logo p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tab{
+    background-color: #42e242;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    transition: all 0.3s ease;
+}
+
+.register-container,
+.log-container,
+.create-container{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.container {
+    justify-content: center;
+    width: 450px;
+    margin-top: 100px;
+    display: block;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.red {
+    margin: 10px 5px;
+}
+
+.red .error {
+    color: red;
+}
+
+.red .success {
+    color: lime;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff;
+}
+
+input,
+select {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ffffff;
+    height: 40px;
+    color: black;
+    width: 100%;
+    outline: none;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #42e242;
+}
+
+p{
+    color: orange;
+    font-size: 19px;
+}
+
+a{
+    color: rgb(255, 255, 255);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 70px;
+        border-bottom-left-radius: 10px;
+        right: 0;
+        width: 40%;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .container,
+    .create-container {
+        justify-content: center;
+        width: auto;
+        height: auto;
+    }     
+
+}
+
+/* 
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var password=document.getElementById('password').value;
+
+        var xhr=new XMLHttpRequest();
+        xhr.open('POST', 'php/register.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange=function () {
+            if (xhr.readyState==4 && xhr.status==200) {
+                document.getElementById('statusMessage').innerText=xhr.responseText;
+            }
+        }
+
+        ;
+
+        xhr.send(`name=$ {
+                name
+            }
+
+            &email=$ {
+                email
+            }
+
+            &password=$ {
+                password
+            }
+
+            `);
+    }); */
